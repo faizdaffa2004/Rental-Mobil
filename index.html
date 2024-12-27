@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Mobil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Booking Mobil</h1>
+    </header>
+    <main>
+        <form id="bookingForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="car">Pilih Mobil:</label>
+            <select id="car" name="car" required>
+                <option value="">--Pilih Mobil--</option>
+                <option value="avanza">Toyota Avanza</option>
+                <option value="innova">Toyota Innova</option>
+                <option value="fortuner">Toyota Fortuner</option>
+            </select>
+
+            <label for="date">Tanggal Booking:</label>
+            <input type="date" id="date" name="date" required>
+
+            <button type="submit">Booking</button>
+        </form>
+
+        <section id="result">
+            <!-- Hasil akan muncul di sini -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
