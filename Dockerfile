@@ -10,8 +10,11 @@ COPY . .
 # Install http-server secara global
 RUN npm install -g http-server
 
-# Expose port 8080
-EXPOSE 8080
+# Install dependencies jika ada package.json
+RUN npm install
 
-# Jalankan http-server
-CMD ["http-server", "/app", "-p", "8080"]
+# Expose port 8081
+EXPOSE 8081
+
+# Jalankan aplikasi menggunakan npm start
+CMD ["npm", "start"]

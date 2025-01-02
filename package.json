@@ -1,6 +1,6 @@
 {
     "scripts": {
-      "start": "http-server /app -p 8080"
+      "start": "http-server /app -p 8081"
     }
   }
   
