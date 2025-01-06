@@ -1,20 +1,9 @@
-# Gunakan Node.js sebagai base image
-FROM node:alpine
+FROM nginx:latest
 
-# Set direktori kerja di dalam container
-WORKDIR /app
+WORKDIR /usr/share/nginx/html
 
-# Salin file proyek ke dalam container
 COPY . .
 
-# Install http-server secara global
-RUN npm install -g http-server
+EXPOSE 80
 
-# Install dependencies jika ada package.json
-RUN npm install
-
-# Expose port 8081
-EXPOSE 8081
-
-# Jalankan aplikasi menggunakan npm start
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
