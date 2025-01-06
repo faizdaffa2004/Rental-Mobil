@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Use a fixed port for the main branch
-                    def branchPort = 3008
+                    def branchPort = 8083
 
                     echo "Stopping and removing any existing container for the main branch..."
                     bat "docker stop mobilcontainer || exit 0"
