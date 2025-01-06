@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') { // mobilimage //mobilcontainer
+        stage('Build Docker Image') { // mobilimage //new-car-container
             steps {
                 script {
                     echo "Building Docker image for the main branch..."
@@ -28,11 +28,11 @@ pipeline {
                     def branchPort = 8083
 
                     echo "Stopping and removing any existing container for the main branch..."
-                    bat "docker stop mobilcontainer || exit 0"
-                    bat "docker rm mobilcontainer || exit 0"
+                    bat "docker stop new-car-container || exit 0"
+                    bat "docker rm new-car-container || exit 0"
 
                     echo "Running new container for the main branch on port ${branchPort}..."
-                    bat "docker run --rm -d --name mobilcontainer -p ${branchPort}:80 mobilimage"
+                    bat "docker run --rm -d --name new-car-container -p ${branchPort}:80 mobilimage"
 
                     echo "Container for the main branch is running on port ${branchPort}"
                 }
